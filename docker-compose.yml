@@ -16,3 +16,11 @@ services:
       context: ./src
     volumes:
       - ./src:/var/www/html
+    links:
+      - db
+
+  db:
+    build:
+      context: ./db
+    environment:
+      MYSQL_ROOT_PASSWORD: password
